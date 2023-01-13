@@ -1,3 +1,6 @@
+/**
+ * @author allas
+ */
 package com.allasassis.attornatus;
 
 import org.springframework.boot.SpringApplication;

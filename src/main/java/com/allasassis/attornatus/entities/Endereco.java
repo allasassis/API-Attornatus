@@ -6,12 +6,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "tb_endereco")
 public class Endereco implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -20,13 +22,12 @@ public class Endereco implements Serializable{
 	private String cep;
 	private Integer numero;
 	private String cidade;
-	
-	private Pessoa pessoa;
 
 	public Endereco() {
 	}
 	
-	public Endereco(String logradouro, String cep, Integer numero, String cidade) {
+	public Endereco(Long id, String logradouro, String cep, Integer numero, String cidade) {
+		this.id = id;
 		this.logradouro = logradouro;
 		this.cep = cep;
 		this.numero = numero;
